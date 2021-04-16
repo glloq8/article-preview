@@ -1,0 +1,410 @@
+@charset "UTF-8";
+/*---------------------------------------------------------------------------------------------------*/
+/*-_-_-_-_-_-_- typography -_-_-_-_-_-_- */
+/*---------------------------------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------------------------------*/
+/*-_-_-_-_-_-_- colors -_-_-_-_-_-_- */
+/*---------------------------------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------------------------------*/
+/*-_-_-_-_-_-_- spaces and width-_-_-_-_-_-_- */
+/*---------------------------------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------------------------------*/
+/*-_-_-_-_-_-_- media queries -_-_-_-_-_-_- */
+/*---------------------------------------------------------------------------------------------------*/
+/* Fonction toute prête pour gérer Rem et Pixel en fonction des supports des navigateurs. */
+:root {
+  --gap: 8px;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  box-sizing: border-box;
+}
+
+strong, b {
+  font-weight: bold;
+}
+
+ul, ol {
+  list-style-type: none;
+}
+
+table {
+  border: 0;
+  border-spacing: 0;
+  empty-cells: show;
+  border-collapse: 0;
+}
+
+th, td {
+  text-align: left;
+  font-weight: normal;
+}
+
+html {
+  font-size: 62.5%;
+  -webkit-text-size-adjust: 62.5%;
+  -ms-text-size-adjust: 62.5%;
+}
+
+body {
+  font-size: 13px;
+  font-size: 1.3rem;
+  line-height: 1.3;
+  font-family: "Manrope", sans-serif;
+  color: #9eafc2;
+}
+
+html,
+button,
+input,
+select,
+textarea {
+  font-family: sans-serif;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+  display: block;
+}
+
+h1, h2, h3, h4, h5 {
+  font-weight: normal;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+button,
+input,
+select,
+textarea {
+  font-size: 100%;
+  border: 0;
+  vertical-align: baseline;
+  *vertical-align: middle;
+}
+
+button,
+input {
+  line-height: normal;
+}
+
+button,
+select {
+  text-transform: none;
+}
+
+input[type=text],
+input[type=password],
+input[type=number] {
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+  border-radius: 0;
+}
+
+/* input[type="number"] {
+     -webkit-appearance: textfield;
+     -moz-appearance:textfield;
+} */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+  /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+button,
+html input[type=button],
+input[type=reset],
+input[type=submit] {
+  -webkit-appearance: button;
+  cursor: pointer;
+  *overflow: visible;
+}
+
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+
+input[type=checkbox],
+input[type=radio] {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  *height: 13px;
+  *width: 13px;
+}
+
+input[type=search] {
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+textarea {
+  overflow: auto;
+  vertical-align: top;
+  resize: vertical;
+}
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.attribution {
+  position: absolute;
+  bottom: 10px;
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: #3e52a3;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+  background-color: #ecf2f8;
+}
+
+article {
+  display: flex;
+  flex-direction: column;
+  width: 327px;
+  border-radius: 7px;
+  box-shadow: 2px 2px 10px rgba(125, 125, 125, 0.4);
+  background: white;
+  position: relative;
+}
+
+article .photo {
+  height: 200px;
+}
+
+article .photo img {
+  border-radius: 7px 7px 0 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+article .article-details {
+  padding: calc(var(--gap) * 5) calc(var(--gap) * 4) 0;
+}
+
+article .article-details h2 {
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #48556a;
+  font-size: 16px;
+  font-size: 1.6rem;
+}
+
+article .article-details .desc {
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+article footer {
+  display: flex;
+  align-items: center;
+  height: calc(var(--gap) * 8);
+}
+
+article footer .author {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+article footer .author .avatar {
+  margin-right: calc(var(--gap) * 2);
+  width: 40px;
+  height: 40px;
+}
+
+article footer .author .avatar img {
+  display: inline-block;
+  border-radius: 50%;
+}
+
+article footer .author .identity {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  flex: 1;
+}
+
+article footer .author .identity strong {
+  font-weight: 700;
+  color: #48556a;
+  margin-bottom: calc(var(--gap) * 0.5);
+}
+
+article footer .share .toggle {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: calc(var(--gap) * 4);
+  height: calc(var(--gap) * 4);
+  background-color: #ecf2f8;
+  border-radius: 50%;
+  z-index: 2;
+  cursor: pointer;
+}
+
+article footer .share .toggle svg {
+  fill: #48556a;
+  margin-left: 1px;
+}
+
+article footer .share .sharbox {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: #48556a;
+  height: calc(var(--gap) * 8);
+  border-radius: 0 0 8px 8px;
+  display: flex;
+  align-items: center;
+  padding-left: calc(var(--gap) * 4);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 300ms ease-in-out;
+}
+
+article footer .share .sharbox label {
+  color: #6d7f97;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  margin-right: 20px;
+}
+
+article footer .share .sharbox a {
+  margin-right: calc(var(--gap) * 1);
+  transition: transform 300ms ease-in-out;
+}
+
+article footer .share .sharbox a:hover {
+  transform: translateY(-2px);
+}
+
+article footer .share.open .toggle {
+  background-color: #6d7f97;
+}
+
+article footer .share.open .toggle svg {
+  fill: #ecf2f8;
+}
+
+article footer .share.open .sharbox {
+  opacity: 1;
+}
+
+@media (min-width: 375px) {
+  article {
+    width: 730px;
+    flex-direction: row;
+    align-items: stretch;
+  }
+
+  article .photo {
+    width: 285px;
+    height: 100%;
+  }
+
+  article .photo img {
+    border-radius: 8px 0 0 8px;
+    display: block;
+  }
+
+  article .article-details {
+    flex: 1;
+    padding: calc(var(--gap) * 5) calc(var(--gap) * 5) calc(var(--gap) * 4) calc(var(--gap) * 5);
+  }
+
+  article .article-details h2 {
+    font-size: 20px;
+    font-size: 2rem;
+    margin-bottom: calc(var(--gap) * 2);
+  }
+
+  article footer {
+    height: auto;
+  }
+
+  article footer .share .sharbox {
+    justify-content: center;
+    bottom: 100px;
+    left: auto;
+    right: -68px;
+    width: 250px;
+    height: 55px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 20px rgba(125, 125, 125, 0.4);
+    padding-left: 0;
+  }
+
+  article footer .share .sharbox::after {
+    content: "";
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 12px 12px 0 12px;
+    border-color: #48556a transparent transparent transparent;
+  }
+
+  article footer .share .sharbox a + a {
+    margin-right: 0;
+    margin-left: calc(var(--gap) * 2);
+  }
+}
+
+/*# sourceMappingURL=/styles.962e011e.css.map */
