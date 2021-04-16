@@ -1,6 +1,181 @@
-@import 'scss/reset';
-@import 'scss/base';
-@import 'scss/nav';
-@import 'scss/footer';
+@import 'scss/_global';
 
-@import '../assets/fonts/webfonts/stylesheet.css';
+.attribution { position: absolute;bottom: 10px;font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+  background-color: $lightGray;
+}
+article {
+  display: flex;
+  flex-direction: column;
+  width: 327px;
+  border-radius: 7px;
+  box-shadow: 2px 2px 10px rgba(125, 125, 125, .4);
+  background: white;
+  position: relative;
+}
+article .photo {
+  height: 200px;
+}
+article .photo img {
+  border-radius: 7px 7px 0 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+article .article-details {
+  padding: space(5) space(4) 0;
+}
+article .article-details h2 {
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: $darkGray;
+  @include font-size(1.6);
+}
+article .article-details .desc {
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+article footer {
+  display: flex;
+  align-items: center;
+  height: space(8);
+}
+article footer .author {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+article footer .author .avatar {
+  margin-right: space(2);
+  width: 40px;
+  height: 40px;
+}
+article footer .author .avatar img {
+  display: inline-block;
+  border-radius: 50%;
+}
+article footer .author .identity {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  flex: 1;
+}
+article footer .author .identity strong {
+  font-weight: 700;
+  color: $darkGray;
+  margin-bottom: space(.5);
+}
+article footer .share .toggle {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: space(4);
+  height: space(4);
+  background-color: $lightGray;
+  border-radius: 50%;
+  z-index: 2;
+  cursor: pointer;
+}
+article footer .share .toggle svg {
+  fill: $darkGray;
+  margin-left: 1px;
+}
+article footer .share .sharbox {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: $darkGray;
+  height: space(8);
+  border-radius: 0 0 8px 8px;
+  display: flex;
+  align-items: center;
+  padding-left: space(4);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 300ms ease-in-out;
+}
+article footer .share .sharbox label {
+  color: $darkGrayDesaturated;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  margin-right: 20px;
+}
+article footer .share .sharbox a {
+  margin-right: space(1);
+  transition: transform 300ms ease-in-out;
+}
+article footer .share .sharbox a:hover {
+  transform: translateY(-2px);
+}
+article footer .share.open .toggle {
+  background-color: $darkGrayDesaturated;
+}
+article footer .share.open .toggle svg {
+  fill: $lightGray;
+}
+article footer .share.open .sharbox {
+  opacity: 1;
+}
+
+@include up(375) {
+  article {
+    width: 730px;
+    flex-direction: row;
+    align-items: stretch;
+  }
+  article .photo {
+    width: 285px;
+    height: 100%;
+  }
+  article .photo img {
+    border-radius: 8px 0 0 8px;
+    display: block;
+  }
+  article .article-details {
+    flex: 1;
+    padding: space(5) space(5) space(4) space(5);
+  }
+  article .article-details h2 {
+    @include font-size(2);
+    margin-bottom: space(2);
+  }
+  article footer {
+    height: auto;
+  }
+  article footer .share .sharbox {
+    justify-content: center;
+    bottom: 100px;
+    left: auto;
+    right: -68px;
+    width: 250px;
+    height: 55px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 20px rgba(125, 125, 125, .4);
+    padding-left: 0;
+  }
+  article footer .share .sharbox::after {
+    content: '';
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 12px 12px 0 12px;
+    border-color: $darkGray transparent transparent transparent;
+  }
+  article footer .share .sharbox a + a {
+    margin-right: 0;
+    margin-left: space(2);
+  }
+}

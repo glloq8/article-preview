@@ -1,5 +1,8 @@
-// here you put all the js you want.
-import Navbar from "./js/navbar.js";
+var toggle = document.querySelector('.share .toggle')
+var share = document.querySelector('.sharbox')
 
-const navbar = new Navbar()
+toggle.addEventListener('click', function() {
+  this.parentNode.classList.toggle('open')
+  share.style.zIndex = "1"
 
+})
