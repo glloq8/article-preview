@@ -234,7 +234,7 @@ article footer .share .sharbox {
   transition: opacity 300ms ease-in-out;
 }
 
-article footer .share .sharbox label {
+article footer .share .sharbox .label {
   color: #6d7f97;
   text-transform: uppercase;
   letter-spacing: 5px;
