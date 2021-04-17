@@ -114,7 +114,9 @@ img {
 .attribution a {
   color: #3e52a3;
 }
-
+html {
+  height: 100%;
+}
 body {
   display: flex;
   align-items: center;
